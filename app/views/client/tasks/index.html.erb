@@ -1,0 +1,53 @@
+<div class="ibox-content m-b-sm border-bottom">
+  <div class="p-xs">
+    <div class="pull-left m-r-md">
+      <i class="fa fa-plus-circle fa-5x text-navy mid-icon"></i>
+    </div>
+    <h2>Tasks</h2>
+    <span>List of all the created tasks. Al the templates you have selected also comes here. Please click the submission button to view the submisisons. </span>
+  </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp ibox-content m-b-sm">
+            <div class="ibox">
+                <p>You need to set the content. Please do that before giving a demo to someone. You need to set the content. Please do that before giving a demo to someone. You need to set the content. Please do that before giving a demo to someone. </p> <br />
+                <%= link_to 'Create new task', new_client_task_path, class: 'btn btn-primary' %> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <% @tasks.each do |task| %>
+            <div class="col-lg-4">
+                <div class="contact-box">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="text-center">
+                                <i class="fa fa-file-o" style="font-size: 85px;"></i>
+                                <div class="m-t-xs font-bold">Industry?</div>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <h3><strong><%= task.title%></strong></h3>
+                            <p><i class="fa fa-map-marker"></i> total submissions: <%=task.submissions.count%></p>
+                            <p><i class="fa fa-clock-o "></i> created at: <%=task.created_at.strftime("%d %b %y")%></p>
+                            <p><%= link_to :submissions,client_task_submissions_path(task), class: "btn btn-primary btn-xs", :style=>'color:#FFFFFF;' %>
+                            <%= link_to :view, client_task_path(task), class: "btn btn-default btn-xs"%>
+                            </p>                          
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>    
+                </div>               
+            </div>
+        <%end%>
+    </div>
+</div>
+
+
+
+

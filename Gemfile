@@ -23,7 +23,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -32,6 +32,44 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# For mobile api
+# gem 'active_model_serializers', '~> 0.10.0'
+gem 'fast_jsonapi'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
+
+
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+# Application specific gems
+# For authentication
+gem 'devise'
+# For authorization and roles management
+gem "pundit"
+# For cloud messaging - push notifications
+gem 'fcm'
+# Rolify to manage the roles - not sure if we need to add this or not
+gem "rolify"
+
+# Select 2 Rails
+gem 'select2-rails'
+
+
+gem 'sidekiq'
+gem 'redis-namespace'
+gem 'sidekiq-scheduler'
+gem 'sidekiq-client-cli'
+gem "sidekiq-cron", "~> 0.6.3"
+
+# pagination rails
+gem 'will_paginate', '~> 3.1.0'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

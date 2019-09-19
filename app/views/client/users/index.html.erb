@@ -1,0 +1,66 @@
+<div class="ibox-content m-b-sm border-bottom" >
+    <div class="p-xs">
+        <div class="pull-left m-r-md">
+            <i class="fa fa-user fa-5x text-navy mid-icon"></i>
+        </div>
+        <h2>Users</h2>
+        <span>Create and manage your users. You can also actviate/deactivate them at any point of time. To view individual users activity please go to the deatils page of individual user.</span>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp ibox-content m-b-sm">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Users under this account</h5>
+                    <div class="ibox-tools">
+                        <a href="#" data-toggle="modal" data-target="#myModal5" class="btn btn-primary btn-xs" id="createModel">New app user</a> 
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="project-list">
+                        <table class="table table-hover" id="users_table">
+                            <tbody>
+                                <% @app_users.each do |user| %>
+                                <tr id="row_<%= user.id %>">
+                                    <%= render partial: 'app_user_row', locals: {user: user} %>
+                                </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                        <div class="pagination">
+                        <%= will_paginate @app_users %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Create User</h4>
+                <small class="font-bold">Please fill the required fields.</small>
+            </div>
+            <div class="modal-body">
+
+                <%= render partial: 'new_app_user', locals: {user: @new_app_user} %>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%# From here the old code starts, need to see if you need this or not %>

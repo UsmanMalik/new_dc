@@ -1,0 +1,61 @@
+
+  <%= stylesheet_link_tag 'task/formbuilder' %>
+
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+
+  .fb-main {
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 600px;
+  }
+
+  input[type=text] {
+    height: 26px;
+    margin-bottom: 3px;
+  }
+
+  select {
+    margin-bottom: 5px;
+    font-size: 40px;
+  }
+  </style>
+
+<div class="ibox-content m-b-sm border-bottom">
+  <div class="p-xs">
+    <div class="pull-left m-r-md">
+      <i class="fa fa-plus-circle fa-5x text-navy mid-icon"></i>
+    </div>
+    <h2>Create New Task</h2>
+    <span>Create new task by simple drag and drop builder. You can add fields dynamically. Once you have created a form it will be pushed to the app and users will get notified. Users will be able to send data right away.  </span>
+  </div>
+</div>
+
+
+<div class="ibox-content m-b-sm border-bottom">
+    <div class="p-xs">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <h2><b>Enter task title *</b></h2>
+                <input type="text" id="new_form_title"  style="height: 35px" class="form-control search-query edit-btn-large"/><br />
+            </div>
+            <div class="col-sm-4">
+                <h2>Select the group</h2>
+                <%= collection_select(:task,:group_id,@groups,:id,:title, {:prompt => 'All users', value: -999, class: 'blahh'}, {class: "form-control", id: 'multi-group', multiple: true}) %> <br /> <br />   
+            </div>
+            <div class="col-sm-2">
+                <h2>Submit task</h2>
+                <button type="button" id="submit_task" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class='fb-main'></div>
+</div>
+
+        
