@@ -5,7 +5,7 @@ class Client::TasksController < Client::BaseController
     end
     
     def new		
-		@groups = current_user.groups
+			@groups = current_user.groups
     end
     
 	def create

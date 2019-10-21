@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  root "client/dashboard#index"
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     resources :groups do
       collection {post :update_members}
       get :manage
-      get :get_data #what is this for? Not sure
+      get :get_excluded_group_users #what is this for? Not sure
     end
 
     resources :templates, only: [:index] do

@@ -22,5 +22,6 @@
 //= require cable
 //= require plugins/pace/pace.min
 //= require_tree ./channels
+//= require duallistbox/dual-list-box
 //= require_tree ./client
 //= require task/formbuilder

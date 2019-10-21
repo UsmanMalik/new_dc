@@ -42,6 +42,9 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 
+gem 'gon'
+gem 'rabl-rails'
+
 
 
 # Use Capistrano for deployment

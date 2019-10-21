@@ -1,29 +1,15 @@
-<div class="row">
-	<div class="ibox-content m-b-sm border-bottom">
-		<div class="row">
-		<h1><b><%= "Group: " + @group.title%></b></h1><br /><br />
-		<h3> Please select the users and create or update the group.</h3><br /><br />
+<!--<div class="row">-->
+<!--	<div class="ibox-content m-b-sm border-bottom">-->
+<!--		<div class="row">-->
+<!--		<h1><b><%#= "Group: " + @group.title%></b></h1><br /><br />-->
+<!--		<h3> Please select the users and create or update the group.</h3><br /><br />-->
 
-			<div class="col-lg-12">
-				<form action="/groups/update_members" method="POST">
-					<div class="row">
-						<div id="dual-list-box" class="form-group row">
-							<% @str = 'get_data' %>
-							<select multiple="multiple" name="users[]" data-title="employees" data-source=<%= @str %>
-								data-value="id" data-text="name">
-								<% @group.users.each do |u| %>
-								<option value=<%= u.id %> selected><%= u.first_name + ' '+ u.last_name%></option>
-								<%end%>
-							</select>
-						</div>
-						<input type="hidden" name="group_id" value=<%= @group_id %> />
-						<input type="submit" value="Update" class="btn btn-w-m btn-primary" />
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+
+
 
 <div class="ibox-content m-b-sm border-bottom">
     <div class="p-xs">
@@ -32,7 +18,10 @@
     </div>
 </div>
 
-<%= Gon::Base.render_data({}) %>
+<%#= Gon::Base.render_data({}) %>
+<%= Gon::Base.render_data %>
+
+
 
 <script type="text/javascript">
 	$('select').DualListBox();
